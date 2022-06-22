@@ -1,0 +1,30 @@
+{
+  "name": "mcc-api",
+  "version": "1.0.0",
+  "description": "An API Wrapper for the MCC.live API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "Minecraft",
+    "Minecraft Event",
+    "MCC",
+    "MC Championship",
+    "Stats"
+  ],
+  "author": {
+    "name": "derNiklaas",
+    "email": "info@derniklaas.de"
+  },
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.2.6"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4",
+    "@types/node": "^18.0.0"
+  }
+}
