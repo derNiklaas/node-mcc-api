@@ -2,7 +2,7 @@
 A simple node.js wrapper for the [MC Championship Event API](https://github.com/Noxcrew/mcchampionship-api).
 
 ### Getting started
-Install the package using ``npm install ndoe-mcc-api`` and import the ``MCCAPI`` class.
+Install the package using ``npm install node-mcc-api`` and import the ``MCCAPI`` class.
 ```javascript
 import MCCAPI from 'node-mcc-api'
 ```
