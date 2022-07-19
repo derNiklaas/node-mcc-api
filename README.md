@@ -22,7 +22,7 @@ MCCAPI.getEventInformation().then(response => {
 });
 ```
 
-Output the current holder of the ``Most eliminations``
+Output the current holder of the ``Most eliminations`` in Rocket Spleef:
 ```javascript
 MCCAPI.getHallOfFameStats().then(response => {
     console.log(response.data.MG_ROCKET_SPLEEF["Most eliminations"]);
