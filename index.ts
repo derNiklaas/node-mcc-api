@@ -1,10 +1,12 @@
 import fetch from 'node-fetch';
+import throttle from 'fetch-throttle';
+const fetchMCC = throttle(fetch, 40, 60*1000);
 
 export default class MCCAPI {
     private static BASE_URL = "https://api.mcchampionship.com/v1";
 
     private static async request(endpoint: string): Promise<unknown> {
-        const response = await fetch(`${this.BASE_URL}/${endpoint}`)
+        const response = await fetchMCC(`${this.BASE_URL}/${endpoint}`)
         return await response.json()
     }
 
