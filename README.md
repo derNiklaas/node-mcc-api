@@ -18,7 +18,7 @@ MCCAPI.getParticipantsOnTeam("RED").then(response => {
 Output the current event: 
 ```javascript
 MCCAPI.getEventInformation().then(response => {
-    console.log(`The current Event is MCC ${response}.`);
+    console.log(`The current Event is MCC ${response.data.event}.`);
 });
 ```
 
