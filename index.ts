@@ -63,7 +63,8 @@ export interface HallOfFameGameData {
     [k: string]: {
         "player": string,
         "value": string,
-        "placement": number
+        "placement": number,
+        "changedHands": boolean
     }
 }
 
@@ -96,7 +97,8 @@ export interface ParticipantResponse {
 
 export interface PlayerData {
     "username": string,
-    "uuid": string
+    "uuid": string,
+    "stream": string
 }
 
 export interface ParticipantTeamResponse {

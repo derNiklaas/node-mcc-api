@@ -7,7 +7,7 @@ async function run() {
     console.log(HOF_RS.data["Most eliminations"]);
 
     let red = await MCCAPI.getParticipantsOnTeam("RED");
-    console.log(red.data[0]);
+    console.log(red.data[0].stream);
 
     let all = await MCCAPI.getParticipants();
     console.log(all.data.RED[0]);
