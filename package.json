@@ -1,6 +1,6 @@
 {
   "name": "node-mcc-api",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "An API Wrapper for the MCC.live API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
