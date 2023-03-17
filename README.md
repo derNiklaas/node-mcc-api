@@ -15,16 +15,24 @@ MCCAPI.getParticipantsOnTeam("RED").then(response => {
     console.log(response.data);
 });
 ```
-Output the current event: 
+
+Print information about the current event cycle: 
 ```javascript
 MCCAPI.getEventInformation().then(response => {
     console.log(`The current Event is MCC ${response.data.event}.`);
 });
 ```
 
-Output the current holder of the ``Most eliminations`` in Rocket Spleef:
+Print the current holder of the ``Most eliminations`` in Rocket Spleef (Rush):
 ```javascript
 MCCAPI.getHallOfFameStats().then(response => {
     console.log(response.data.MG_ROCKET_SPLEEF["Most eliminations"]);
+});
+```
+
+Print information about the fourth game in MCC 3:
+```javascript
+MCCAPI.getRundownForEvent("3").then(response => {
+    console.log(response.data.history["3"]);
 });
 ```
