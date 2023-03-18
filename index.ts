@@ -210,5 +210,17 @@ export type GameInformation = {
     /** The key of the game played. */
     "game": Game,
     /** A zero based index of when the game was played in the event. */
-    "index": number
+    "index": number,
+    "eventScores": {
+        [key in Team]: number
+    },
+    "gamePlacements": {
+        [key in Team]: number
+    },
+    "individualScores": {
+        [k: string]: number
+    },
+    "eventPlacements": {
+        [key in Team]: number
+    }
 }
