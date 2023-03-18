@@ -1,3 +1,7 @@
+### 1.3.1
+
+- Added missing type definitions for the ``/history`` endpoint
+
 ### 1.3.0
 
 - Added the new endpoint and type support for
