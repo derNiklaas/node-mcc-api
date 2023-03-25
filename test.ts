@@ -1,4 +1,4 @@
-import MCCAPI from "./index.js"
+import MCCAPI from "./index"
 
 async function run() {
 
@@ -19,6 +19,9 @@ async function run() {
 
     let rundownMCC3 = await MCCAPI.getRundownForEvent("3");
     console.log("The 4th game in MCC3: " + JSON.stringify(rundownMCC3.data.history["3"]));
+
+    let rundownMCC29 = await MCCAPI.getRundownForEvent("29");
+    console.log("Seapeekays score in the 4th game of MCC 29: " + rundownMCC29.data.history["3"].individualScores["Seapeekay"]);
 
     let eventInfo = await MCCAPI.getEventInformation();
     console.log("The name of the next MCC event: " + eventInfo.data.event);

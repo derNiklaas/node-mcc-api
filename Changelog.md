@@ -1,3 +1,8 @@
+### 1.4.0
+
+- Deprecated ``getHallOfFameStats()`` and ``getHallOfFameStatsForGame(Game)`` as they are now deprecated in
+  the [v1.3.0](https://github.com/Noxcrew/mcchampionship-api/releases/tag/v1.3.0) version of the API
+
 ### 1.3.1
 
 - Added missing type definitions for the ``/history`` endpoint
@@ -9,7 +14,7 @@
 
 ### 1.2.0
 
-- Added type support for the [v1.1.0](https://github.com/Noxcrew/mcchampionship-api/releases/tag/v1.1.0) Version of the
+- Added type support for the [v1.1.0](https://github.com/Noxcrew/mcchampionship-api/releases/tag/v1.1.0) version of the
   API
 
 ### 1.1.0
