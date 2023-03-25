@@ -19,7 +19,10 @@ export default class MCCAPI {
     }
 
     /**
-     * Returns all statistics in the Hall of Fame.
+     * @deprecated This endpoint will be removed in the future as the statistics API will be changed in the future.
+     * See https://github.com/Noxcrew/mcchampionship-api/releases/tag/v1.3.0 for more information
+     *
+     * Returns all statistics in the legacy Hall of Fame.
      * Updates at the end of each event.
      */
     public static async getHallOfFameStats(): Promise<HallOfFameResponse> {
@@ -27,7 +30,10 @@ export default class MCCAPI {
     }
 
     /**
-     * Returns all statistics in the Hall of Fame for a given game.
+     * @deprecated This endpoint will be removed in the future as the statistics API will be changed in the future.
+     * See https://github.com/Noxcrew/mcchampionship-api/releases/tag/v1.3.0 for more information
+     *
+     * Returns all statistics in the legacy Hall of Fame for a given game.
      * Updates at the end of each event.
      *
      * @param game The key of the game you want statistics for
