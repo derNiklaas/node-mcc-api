@@ -1,4 +1,4 @@
-import MCCAPI from "./index"
+import MCCAPI from "./index.js"
 
 async function run() {
 

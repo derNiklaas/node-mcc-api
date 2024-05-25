@@ -155,7 +155,9 @@ export interface PlayerData {
     /** The players Minecraft UUID. */
     "uuid": string,
     /** The link to the players stream. */
-    "stream": string
+    "stream": string,
+    /** A link to an icon for the player. */
+    "icon": string,
 }
 
 export interface ParticipantTeamResponse extends BaseResponse {
