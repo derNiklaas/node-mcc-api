@@ -58,7 +58,7 @@ export default class MCCAPI {
      * NOTE: Any event from Season 3 (29 and beyond) gives a full rundown of each game,
      * including its game and individual scores. Events before Season 3 (28 and below) will receive this data "soon".
      *
-     * @param event the number of a given (half-)canon event
+     * @param event the abbreviation of an event
      */
     public static async getRundownForEvent(event: string): Promise<RundownResponse> {
         return await this.request(`rundown/${event}`) as RundownResponse
