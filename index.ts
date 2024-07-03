@@ -18,6 +18,10 @@ export default class MCCAPI {
         return await this.request("event") as EventInformationResponse;
     }
 
+    public static async getValidEvents(): Promise<AllEventInformationResponse> {
+        return await this.request("events") as AllEventInformationResponse;
+    }
+
     /**
      * @deprecated This endpoint will be removed in the future as the statistics API will be changed in the future.
      * See https://github.com/Noxcrew/mcchampionship-api/releases/tag/v1.3.0 for more information
@@ -99,6 +103,10 @@ export interface EventInformationResponse extends BaseResponse {
     }
 }
 
+export interface AllEventInformationResponse extends BaseResponse {
+    "data": String[]
+}
+
 export interface HallOfFameResponse extends BaseResponse {
     "data": {
         [key in Game]: HallOfFameGameData
@@ -136,7 +144,7 @@ export interface RundownResponse extends BaseResponse {
         "individualScores": {
             [k: string]: number
         },
-        "history": GameHistory,
+        "history": LegacyGameHistory | GameHistory,
         "creators": {
             [key in Team]: Array<String>
         }
@@ -168,6 +176,7 @@ export interface ParticipantTeamResponse extends BaseResponse {
 export type Game =
     "MG_ROCKET_SPLEEF"
     | "MG_SURVIVAL_GAMES"
+    /** This key does not hold any statistics. */
     | "MG_PARKOUR_WARRIOR"
     | "MG_ACE_RACE"
     | "MG_BINGO_BUT_FAST"
@@ -177,10 +186,13 @@ export type Game =
     | "MG_HOLE_IN_THE_WALL"
     | "MG_BATTLE_BOX"
     | "MG_BUILD_MART"
+    /** This key does not hold any statistics. */
     | "MG_SANDS_OF_TIME"
     | "MG_DODGEBOLT"
     | "MG_PARKOUR_TAG"
+    /** This key does not hold any statistics. */
     | "MG_GRID_RUNNERS"
+    /** This key does not hold any statistics. */
     | "MG_MELTDOWN"
     | "GLOBAL_STATISTICS"
     | "LEGACY_STATISTICS"
@@ -190,10 +202,13 @@ export type Game =
     | "MG_FOOT_RACE"
     /** This key does not hold any statistics.  */
     | "MG_ROCKET_SPLEEF_OLD"
+    /** This key does not hold any statistics.  */
+    | "MG_RAILROAD_RUSH"
 
 export type Team = "RED" | "ORANGE" | "YELLOW" | "LIME" | "GREEN" | "CYAN" | "AQUA" | "BLUE" | "PURPLE" | "PINK"
 
-export type GameHistory = {
+/** This should be used for events before Season 4 */
+export type LegacyGameHistory = {
     /** The first game played. */
     "0": GameInformation,
     /** The second game played. */
@@ -210,6 +225,11 @@ export type GameHistory = {
     "6": GameInformation,
     /** The eighth game played. */
     "7": GameInformation
+}
+
+/** This should be used for events after the start of Season 4 */
+export type GameHistory = {
+    [key in string]: GameInformation
 }
 
 export type GameInformation = {
