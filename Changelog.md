@@ -1,3 +1,16 @@
+### 1.6.0
+
+- Add new method to retrieve all valid event keys via the ``/events`` endpoint
+- Renamed old game history object to ``LegacyGameHistory``, which should be used for all MCCs before the start of Season 4
+- Added new game history object which should be used for all Season 4 MCCs
+
+### 1.5.1
+- Fix typo in documentation
+
+### 1.5.0
+
+- Added ``icon`` as a field to the ``PlayerData`` interface
+
 ### 1.4.0
 
 - Deprecated ``getHallOfFameStats()`` and ``getHallOfFameStatsForGame(Game)`` as they are now deprecated in
