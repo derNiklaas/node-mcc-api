@@ -1,3 +1,9 @@
+### 1.7.0
+- Updated to [v1.6.0](https://github.com/Noxcrew/mcchampionship-api/releases/tag/v1.6.0) of the API
+  - Added `getParticipant(uuid)` to get a single participant
+  - Added `team` and `platform` to the player information object
+- Increased allowed API requests to 200 requests/min
+
 ### 1.6.0
 
 - Add new method to retrieve all valid event keys via the ``/events`` endpoint
