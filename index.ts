@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import throttle from 'fetch-throttle';
 
-const fetchMCC = throttle(fetch, 40, 60 * 1000);
+const fetchMCC = throttle(fetch, 200, 60 * 1000);
 
 export default class MCCAPI {
     private static BASE_URL = "https://api.mcchampionship.com/v1";
@@ -83,6 +83,15 @@ export default class MCCAPI {
     public static async getParticipantsOnTeam(team: Team): Promise<ParticipantTeamResponse> {
         return await this.request(`participants/${team}`) as ParticipantTeamResponse
     }
+
+    /**
+     * Returns a single participant in the current event cycle
+     *
+     * @param uuid The UUID (dashed or un-dashed) of the participant
+     */
+    public static async getParticipant(uuid: String): Promise<SingleParticipantResponse> {
+        return await this.request(`participant/${uuid}`) as SingleParticipantResponse;
+    }
 }
 
 export interface BaseResponse {
@@ -157,6 +166,10 @@ export interface ParticipantResponse extends BaseResponse {
     }
 }
 
+export interface SingleParticipantResponse extends BaseResponse {
+    "data": PlayerData
+}
+
 export interface PlayerData {
     /** The players Minecraft username. */
     "username": string,
@@ -166,6 +179,10 @@ export interface PlayerData {
     "stream": string,
     /** A link to an icon for the player. */
     "icon": string,
+    /** The team the player is on. */
+    "team": Team,
+    /** The platform the player is streaming on. */
+    "platform": string,
 }
 
 export interface ParticipantTeamResponse extends BaseResponse {
